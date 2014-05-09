@@ -1,7 +1,7 @@
-bitcoin-seeder
+viacoin-seeder
 ==============
 
-Bitcoin-seeder is a crawler for the Bitcoin network, which exposes a list
+Viacoin-seeder is a crawler for the Viacoin network, which exposes a list
 of reliable nodes via a built-in DNS server.
 
 Features:
