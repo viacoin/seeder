@@ -109,6 +109,12 @@ class CNode {
         vRecv >> addrFrom >> nNonce;
       if (nVersion >= 106 && !vRecv.empty())
         vRecv >> strSubVer;
+
+      if (strSubVer.find("/Satoshi:0.10.0/") != std::string::npos) {
+        ban = 100000;
+        return true;
+      }
+
       if (nVersion >= 209 && !vRecv.empty())
         vRecv >> nStartingHeight;
       
