@@ -110,7 +110,12 @@ class CNode {
       if (nVersion >= 106 && !vRecv.empty())
         vRecv >> strSubVer;
 
-      if (strSubVer.find("/Satoshi:0.10.0/") != std::string::npos) {
+      if (strSubVer.find("/Satoshi:0.10.0/") != std::string::npos
+              || strSubVer.find("/Satoshi:0.10.1/") != std::string::npos
+              || strSubVer.find("/Satoshi:0.10.2/") != std::string::npos
+              || strSubVer.find("/Satoshi:0.10.3/") != std::string::npos
+              || strSubVer.find("/Satoshi:0.10.4/") != std::string::npos
+              ) {
         ban = 100000;
         return true;
       }
