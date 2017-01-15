@@ -146,10 +146,10 @@ class CNode {
       vRecv >> vAddrNew;
       // printf("%s: got %i addresses\n", ToString(you).c_str(), (int)vAddrNew.size());
       int64 now = time(NULL);
+      vector<CAddress>::iterator it = vAddrNew.begin();
       if (vAddrNew.size() > 1) {
-          vector<CAddress>::iterator it = vAddrNew.begin();
+          if (doneAfter == 0 || doneAfter > now + 1) doneAfter = now + 1;
       }
-      if (doneAfter == 0 || doneAfter > now + 1) doneAfter = now + 1;
       while (it != vAddrNew.end()) {
         CAddress &addr = *it;
 //        printf("%s: got address %s\n", ToString(you).c_str(), addr.ToString().c_str(), (int)(vAddr->size()));
